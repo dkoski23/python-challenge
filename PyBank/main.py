@@ -29,6 +29,19 @@ with open(csvpath) as csvfile:
     avg_change = net/total_months
     avg_change = round(avg_change,2)
 
+    
+#print analysis
+print(["Financial Analysis"])
+print(["------------------------"])
+print([f"Total Months: {total_months}"])
+print([f"Total: ${net}"])
+print([f"Average Change: ${avg_change}"])
+print([f"Greatest Increase in Profits: {greatest_increase_date} ${greatest_increase_num}"])
+print([f"Greatest Decrease in Profits: {greatest_decrease_date} ${greatest_decrease_num}"])
+        
+    
+    
+    
 #making variable for output file
 output_file = os.path.join(".","pybank_analysis.txt")
 
