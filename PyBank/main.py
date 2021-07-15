@@ -28,10 +28,22 @@ with open(csvpath) as csvfile:
     
     avg_change = net/total_months
     avg_change = round(avg_change,2)
-    print(avg_change)        
-    print(greatest_decrease_date)
-    print(greatest_decrease_num)
-    print(greatest_increase_date)   
-    print(greatest_increase_num)    
-    print(net)
-    print(total_months)
+    #print(avg_change)        
+    #print(greatest_decrease_date)
+    #print(greatest_increase_date)   
+    #print(greatest_increase_num)    
+    #print(net)
+    #print(total_months)
+
+#making variable for output file
+output_file = os.path.join(".","pybank_analysis.txt")
+
+#opening output file
+with open(output_file, "w", newline="") as analysis:
+    writer = csv.writer(analysis, delimiter=",")
+    
+    writer.writerow(["Financial Analysis"])
+    writer.writerow(["------------------------"])
+    writer.writerow([f"Total Months: {total_months}"])
+    
+    
