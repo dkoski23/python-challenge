@@ -37,8 +37,6 @@ with open(csvpath) as csvfile:
     diff_array = np.diff(monthly_array)
     avg_change = np.average(diff_array)
     avg_change = float(round(avg_change,2))    
-    greatest_increase_date = ''
-    greatest_decrease_date = ""
     g_monthly_increase = max(diff_array)
     #print(g_monthly_increase)
     g_monthly_decrease = min(diff_array)
