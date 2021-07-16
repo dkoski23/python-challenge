@@ -1,7 +1,7 @@
 import os
 import csv
 
-csvpath = os.path.join('.','budget_data.csv')
+csvpath = os.path.join('.','Resources', 'budget_data.csv')
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter= ',')
     #pull out header
@@ -43,7 +43,7 @@ print([f"Greatest Decrease in Profits: {greatest_decrease_date} ${greatest_decre
     
     
 #making variable for output file
-output_file = os.path.join(".","pybank_analysis.txt")
+output_file = os.path.join(".","Analysis","pybank_analysis.txt")
 
 #opening output file
 with open(output_file, "w", newline="") as analysis:
