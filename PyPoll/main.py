@@ -1,7 +1,7 @@
 import os
 import csv
 
-csvpath = os.path.join('.','election_data.csv')
+csvpath = os.path.join('.','Resources','election_data.csv')
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter= ',')
     #pull out header
@@ -28,10 +28,12 @@ with open(csvpath) as csvfile:
             correy += 1
         if row[2] == "O'Tooley":
             otooley += 1
-            
+    print(khan)
+    print(otooley)
+    print(total_votes)
     #make the percentage variables per candidate        
     per_khan = round(khan/total_votes, 5) * 100
-    per_li = (li/total_votes) * 100
+    per_li = round(li/total_votes, 5) * 100
     per_li = round(per_li, 2)
     per_correy = round(correy/total_votes, 5) * 100   
     per_otooley = round(otooley/total_votes, 5) * 100
@@ -55,7 +57,7 @@ with open(csvpath) as csvfile:
     print(["------------------------"])
     
 #making variable for output file
-output_file = os.path.join(".","pypoll_analysis.txt")
+output_file = os.path.join(".","Analysis","pypoll_analysis.txt")
 
 #opening output file
 with open(output_file, "w", newline="") as analysis:
