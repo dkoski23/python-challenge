@@ -55,17 +55,20 @@ with open(csvpath) as csvfile:
     print(["------------------------"])
     
 #making variable for output file
-#output_file = os.path.join(".","pypoll_analysis.txt")
+output_file = os.path.join(".","pypoll_analysis.txt")
 
 #opening output file
-#with open(output_file, "w", newline="") as analysis:
-    #writer = csv.writer(analysis, delimiter=",")
+with open(output_file, "w", newline="") as analysis:
+    writer = csv.writer(analysis, delimiter=",")
     
-    #writer.writerow(["Election Results"])
-    #writer.writerow(["------------------------"])
-    #writer.writerow([f"Total Votes: {total_votes}"])
-    #writer.writerow(["------------------------"])
-    #writer.writerow([f""])
-    #writer.writerow([f""])
-    #writer.writerow([f""])
-    #writer.writerow([f""])
+    writer.writerow(["Election Results"])
+    writer.writerow(["------------------------"])
+    writer.writerow([f"Total Votes: {total_votes}"])
+    writer.writerow(["------------------------"])
+    writer.writerow([f"Khan: {per_khan}% ({khan})"])
+    writer.writerow([f"Li: {per_li}% ({li})"])
+    writer.writerow([f"Correy: {per_correy}% ({correy})"])
+    writer.writerow([f"O'Tooley: {per_otooley}% ({otooley})"])
+    writer.writerow(["------------------------"])
+    writer.writerow([f"Winner: {winner}"])
+    writer.writerow(["------------------------"])
