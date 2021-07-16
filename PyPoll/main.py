@@ -1,3 +1,6 @@
+import os
+import csv
+
 csvpath = os.path.join('.','election_data.csv')
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter= ',')
@@ -32,7 +35,12 @@ with open(csvpath) as csvfile:
     per_li = round(per_li, 2)
     per_correy = round(correy/total_votes, 5) * 100   
     per_otooley = round(otooley/total_votes, 5) * 100
-        
+    
+    #make dictionary of candidates and winner variable so that the winner is not hard coded
+    can_dict = {"Khan": khan, "Correy": correy, "O'Tooley": otooley, "Li": li}
+    
+    #find the key with the highest value in can_dict, withouth hard coding
+    winner = max(can_dict, key = can_dict.get)
         
     print(["Election Results"])
     print(["------------------------"])
@@ -43,7 +51,7 @@ with open(csvpath) as csvfile:
     print([f"Correy: {per_correy}% ({correy})"])
     print([f"O'Tooley: {per_otooley}% ({otooley})"])
     print(["------------------------"])
-    print([f"Winner: ])
+    print([f"Winner: {winner}"])
     print(["------------------------"])
     
 #making variable for output file
