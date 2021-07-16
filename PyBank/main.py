@@ -2,7 +2,7 @@ import os
 import csv
 import numpy as np
 
-csvpath = os.path.join('.','budget_data.csv')
+csvpath = os.path.join('.',"Resources",'budget_data.csv')
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter= ',')
     #pull out header
@@ -61,7 +61,7 @@ print([f"Greatest Decrease in Profits: {gmd_month} (${g_monthly_decrease})"])
     
     
 #making variable for output file
-output_file = os.path.join(".","pybank_analysis.txt")
+output_file = os.path.join(".","Analysis","pybank_analysis.txt")
 
 #opening output file
 with open(output_file, "w", newline="") as analysis:
@@ -69,9 +69,8 @@ with open(output_file, "w", newline="") as analysis:
     
     writer.writerow(["Financial Analysis"])
     writer.writerow(["------------------------"])
-    writer.writerow([f"Total Months: {total_months} (${g_monthly_increase})"])
+    writer.writerow([f"Total Months: {total_months}"])
     writer.writerow([f"Total: ${net}"])
-    #writer.writerow([f"Average Change: ${avg_change}"])
-    #writer.writerow([f"Greatest Increase in Profits: {greatest_increase_date} ${greatest_increase_num}"])
-    #writer.writerow([f"Greatest Decrease in Profits: {greatest_decrease_date} ${greatest_decrease_num}"])
-    
+    writer.writerow([f"Average Change: ${avg_change}"])
+    writer.writerow([f"Greatest Increase in Profits: {gmi_month} ${g_monthly_increase}"])
+    writer.writerow([f"Greatest Decrease in Profits: {gmd_month} ${g_monthly_decrease}"])
